@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
             val clasStrength = findViewById<EditText>(R.id.editTextPhone)
             val editTextVal = clasStrength?.text?.toString()?.toIntOrNull()
             val sub= findViewById<EditText>(R.id.editTexttext)
+            val year =findViewById<EditText>(R.id.editTextYear)
             val subjectName=sub?.text?.toString()
 
             //checking entered value
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity() {
                     val intent = Intent(this, SecondActivity::class.java).also {
                         it.putExtra("enteredNumberKey", editTextVal)
                         it.putExtra("EnterSubject",subjectName.toString())
+                        it.putExtra("EnterYear",year.toString())
                         startActivity(it)
 
                     }}

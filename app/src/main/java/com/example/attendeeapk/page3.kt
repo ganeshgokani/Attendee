@@ -44,6 +44,7 @@ class SecondActivity : AppCompatActivity() {
 
         totalStrength = intent.getIntExtra("enteredNumberKey", 0)
          val sub = intent.getStringExtra("EnterSubject")
+        val year=intent.getStringExtra("EnterYear")
         rollView = findViewById(R.id.rollview)
         presentView = findViewById(R.id.presnt)
         val goBackButton = findViewById<ImageView>(R.id.backbutton)
@@ -130,14 +131,16 @@ class SecondActivity : AppCompatActivity() {
 
         val shareButtonPresent = findViewById<Button>(R.id.cp)
         val shareButtonAbsent= findViewById<Button>(R.id.ca)
+
+
         shareButtonPresent.setOnClickListener {
             val shareString = presentRollNumbers.joinToString(", ")
             if(num==0)
             {
-                shareText("$formattedDateTime   $sub   \n\nPresenters:\n$shareString")
+                shareText("$formattedDateTime   $sub  $year \n\nPresenters:\n$shareString")
             }else
             {
-                shareText(formattedDateTime+"  Period :${num}  "+sub +"\n\n"+"Presenters:\n"+ shareString)
+                shareText(formattedDateTime+"  Period :${num}  "+sub+"  $year  "+"\n\n"+"Presenters:\n"+ shareString)
             }
 
 
@@ -147,10 +150,10 @@ class SecondActivity : AppCompatActivity() {
             val shareString = absentRollNumbers.joinToString(", ")
             if(num==0)
             {
-                shareText("$formattedDateTime  $sub   \n\nAbsentees:\n$shareString")
+                shareText("$formattedDateTime  $sub  $year  \n\nAbsentees:\n$shareString")
             }else
             {
-                shareText(formattedDateTime+"  Period :${num}   "+sub +"\n\n"+ "Absentees: \n"+shareString)
+                shareText(formattedDateTime+"  Period :${num}   "+sub+"  $year  " +"\n\n"+ "Absentees: \n"+shareString)
             }
 
 

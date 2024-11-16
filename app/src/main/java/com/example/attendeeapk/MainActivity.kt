@@ -17,9 +17,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        val summit = findViewById<Button>(R.id.button2)
+        val submit = findViewById<Button>(R.id.button2)
 
-        summit.setOnClickListener {  // button
+        submit.setOnClickListener {  // button
             val clasStrength = findViewById<EditText>(R.id.editTextPhone)
             val editTextVal = clasStrength?.text?.toString()?.toIntOrNull()
             val sub= findViewById<EditText>(R.id.editTexttext)
